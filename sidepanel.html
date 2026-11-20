@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PageScope</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">P</div>
+      <div>
+        <h1>PageScope</h1>
+        <span>WEBPAGE INTELLIGENCE</span>
+      </div>
+    </div>
+    <span class="version">v0.3</span>
+  </header>
+
+  <main>
+    <section class="welcome" id="welcome">
+      <div class="welcome-icon">⌕</div>
+      <h2>Understand any webpage.</h2>
+      <p>
+        Extract important information, discover page structure
+        and turn scattered content into an organized report.
+      </p>
+      <button id="analyzeBtn">Analyze current page</button>
+      <span class="privacy-note">
+        <span class="status-dot"></span>
+        Processed locally in your browser
+      </span>
+    </section>
+
+    <section id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <h3>Examining webpage...</h3>
+      <p>Extracting content and identifying information.</p>
+    </section>
+
+    <section id="report" class="hidden">
+      <div class="report-heading">
+        <div>
+          <span class="eyebrow">PAGESCOPE ANALYSIS</span>
+          <h2 id="pageTitle">Page report</h2>
+          <p id="pageDomain"></p>
+        </div>
+        <span class="report-status">LOCAL</span>
+      </div>
+
+      <section class="report-section">
+        <h3><span class="section-number">01</span><span>— Page identity &amp; classification</span></h3>
+        <div id="classification" class="classification"></div>
+        <div id="classificationEvidence" class="evidence-list"></div>
+        <div id="identityMetadata" class="metadata-strip"></div>
+      </section>
+
+      <section class="report-section">
+        <h3><span class="section-number">02</span><span>— Page overview</span></h3>
+        <p id="overview" class="overview"></p>
+        <div id="overviewEvidence" class="evidence-list"></div>
+      </section>
+
+      <section class="report-section">
+        <h3><span class="section-number">03</span><span>— Key insights</span></h3>
+        <div id="insightList" class="content-list"></div>
+      </section>
+
+      <section class="report-section">
+        <h3><span class="section-number">04</span><span>— Topics &amp; content analysis</span></h3>
+        <p class="interpretation-note">Topic labels surface prominent phrases; they are not verified entities.</p>
+        <div id="topicsList" class="topic-list"></div>
+        <div id="structureSummary" class="content-item"></div>
+        <div id="structureEvidence" class="evidence-list"></div>
+      </section>
+
+      <section class="report-section">
+        <h3><span class="section-number">05</span><span id="specificHeading">— Page-specific analysis</span></h3>
+        <div id="specificAnalysis" class="content-list"></div>
+      </section>
+
+      <section class="report-section">
+        <h3><span class="section-number">06</span><span>— Featured content</span></h3>
+        <div id="featuredList" class="content-list"></div>
+      </section>
+
+      <section class="report-section">
+        <h3><span class="section-number">07</span><span>— Entities &amp; numerical findings</span></h3>
+        <div id="entitiesList" class="content-list"></div>
+        <div id="numbersPreview" class="tag-list"></div>
+        <details class="disclosure">
+          <summary id="numbersSummary">All numerical findings</summary>
+          <div id="numbersList" class="content-list disclosure-content"></div>
+        </details>
+      </section>
+
+      <section class="report-section">
+        <h3><span class="section-number">08</span><span>— Links &amp; sources</span></h3>
+        <div id="linkGroups" class="content-list"></div>
+      </section>
+
+      <section class="report-section">
+        <h3><span class="section-number">09</span><span>— Extracted data</span></h3>
+        <div id="headingsPreview" class="content-list"></div>
+        <details class="disclosure">
+          <summary id="headingsSummary">Full heading structure</summary>
+          <div id="headingsList" class="content-list disclosure-content"></div>
+        </details>
+        <details class="disclosure">
+          <summary id="contentSummary">Extracted text</summary>
+          <div id="contentList" class="content-list disclosure-content"></div>
+        </details>
+        <div id="tablesList" class="content-list"></div>
+        <div id="imagesList" class="content-list"></div>
+      </section>
+
+      <button id="reanalyzeBtn" class="secondary-btn">
+        Reanalyze page
+      </button>
+
+      <section class="report-section">
+        <h3><span class="section-number">10</span><span>— Extraction statistics</span></h3>
+        <div class="stats-grid" id="statsGrid"></div>
+        <p id="extractionDetails" class="muted"></p>
+      </section>
+
+    </section>
+
+    <div id="error" class="error hidden"></div>
+  </main>
+
+  <footer>
+    PAGESCOPE <span>•</span> LOCAL-FIRST INTELLIGENCE
+  </footer>
+
+  <script src="analysis.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
